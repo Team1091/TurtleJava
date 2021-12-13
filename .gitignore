@@ -1,0 +1,9 @@
+#Jetbrains IDE...
+.idea
+
+.gradle/
+gradle/
+build/
+gradlew
+gradlew.bat
+
