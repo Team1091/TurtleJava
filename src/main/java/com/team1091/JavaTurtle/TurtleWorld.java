@@ -39,14 +39,7 @@ public class TurtleWorld extends PApplet {
         // Lets make a new turtle that generates a dotted line
         final Queue<Command> commandList = new LinkedList<>();
 
-        commandList.add(new PenDown());
-        commandList.add(new BuildSquare(25));
-        for (int i = 0; i < 5; i++) {
-            commandList.add(new PenDown());
-            commandList.add(new DriveForward(10));
-            commandList.add(new PenUp());
-            commandList.add(new DriveForward(10));
-        }
+        StudentCommandList.make(commandList);
 
         turtleList.add(
                 new Turtle(

@@ -2,6 +2,7 @@ package com.team1091.JavaTurtle;
 
 import com.team1091.JavaTurtle.command.root.Command;
 
+import java.util.LinkedList;
 import java.util.Queue;
 
 //public class Turtle {
@@ -36,5 +37,9 @@ public class Turtle {
 
     public Turtle(float x, float y, double facing, Queue<Command> commands) {
         this(x, y, facing, false, commands);
+    }
+
+    public Turtle() {
+        this(0, 0, 0, false, new LinkedList<>());
     }
 }
