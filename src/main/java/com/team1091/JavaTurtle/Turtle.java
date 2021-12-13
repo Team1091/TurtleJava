@@ -1,6 +1,6 @@
 package com.team1091.JavaTurtle;
 
-import com.team1091.JavaTurtle.command.Command;
+import com.team1091.JavaTurtle.command.root.Command;
 
 import java.util.Queue;
 
@@ -20,8 +20,9 @@ public class Turtle {
     public float x;
     public float y;
     public double facing;
-    public boolean pen;
+    public boolean penState;
     public float[] penColor = {0, 0, 0};
+    public float penSize;
     public Queue<Command> commands;
     public double dt = 0.1; //Functions as the simulation speed for an individual turtle...
 
@@ -29,7 +30,7 @@ public class Turtle {
         this.x = x;
         this.y = y;
         this.facing = Math.toRadians(facing);
-        this.pen = pen;
+        this.penState = pen;
         this.commands = commands;
     }
 

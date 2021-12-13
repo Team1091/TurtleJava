@@ -2,7 +2,6 @@ package com.team1091.JavaTurtle.command.root;
 
 import com.team1091.JavaTurtle.StatusCode;
 import com.team1091.JavaTurtle.Turtle;
-import com.team1091.JavaTurtle.command.Command;
 
 public class Turn implements Command {
 
@@ -23,7 +22,6 @@ public class Turn implements Command {
             t.facing += Math.toRadians(distanceTurnedNow);
 
             if (distanceTurned >= turn) {
-                reset();
                 return StatusCode.FINISHED;
             }
 

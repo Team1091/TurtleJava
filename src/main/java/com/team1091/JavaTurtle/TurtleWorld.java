@@ -1,6 +1,7 @@
 package com.team1091.JavaTurtle;
 
 import com.team1091.JavaTurtle.command.*;
+import com.team1091.JavaTurtle.command.root.Command;
 import com.team1091.JavaTurtle.commandGroup.BuildSquare;
 import processing.core.PApplet;
 import processing.core.PConstants;
@@ -77,14 +78,16 @@ public class TurtleWorld extends PApplet {
             if (commandToExecute != null) {
                 final var status = commandToExecute.apply(turtle, turtle.dt);
                 if(status == StatusCode.FINISHED) {
+                    commandToExecute.reset();
                     turtle.commands.poll();
                 }
             }
 
             // if the pen is down, we can draw
-            if (turtle.pen) {
+            if (turtle.penState) {
                 background.beginDraw();
                 background.stroke(turtle.penColor[0], turtle.penColor[1], turtle.penColor[2]);
+                background.strokeWeight(1);
                 background.line(oldX, oldY, turtle.x, turtle.y);
                 background.endDraw();
             }

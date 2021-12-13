@@ -2,7 +2,6 @@ package com.team1091.JavaTurtle.command.root;
 
 import com.team1091.JavaTurtle.StatusCode;
 import com.team1091.JavaTurtle.Turtle;
-import com.team1091.JavaTurtle.command.Command;
 
 public class Drive implements Command {
 
@@ -24,7 +23,6 @@ public class Drive implements Command {
         t.y += Math.sin(t.facing) * distTraveledNow;
 
         if (distanceTraveled >= distance) {
-            reset();
             return StatusCode.FINISHED;
         }
 

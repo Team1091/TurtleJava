@@ -1,6 +1,6 @@
 package com.team1091.JavaTurtle.commandGroup;
 
-import com.team1091.JavaTurtle.command.Command;
+import com.team1091.JavaTurtle.command.root.Command;
 
 import java.util.Arrays;
 import java.util.LinkedList;
