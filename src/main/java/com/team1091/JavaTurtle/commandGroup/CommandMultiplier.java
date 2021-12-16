@@ -23,4 +23,10 @@ public class CommandMultiplier extends CommandGroup {
 
         return multipliedCommands;
     }
+
+
+    @Override
+    public String name() {
+        return "In CommandMultiplier:\n\t" + super.name();
+    }
 }

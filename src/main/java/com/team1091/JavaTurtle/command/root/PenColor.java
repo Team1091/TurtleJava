@@ -19,4 +19,9 @@ public class PenColor implements Command {
 
     @Override
     public void reset() {}
+
+    @Override
+    public String name() {
+        return "PenColor";
+    }
 }

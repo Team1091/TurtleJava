@@ -7,5 +7,10 @@ public class PenUp extends PenState implements Command {
     public PenUp() {
         super(false);
     }
+
+    @Override
+    public String name() {
+        return "PenUp";
+    }
 }
 

@@ -5,4 +5,5 @@ import com.team1091.JavaTurtle.Turtle;
 public interface Command {
     StatusCode apply(Turtle t, double dt);
     void reset();
+    String name();
 }

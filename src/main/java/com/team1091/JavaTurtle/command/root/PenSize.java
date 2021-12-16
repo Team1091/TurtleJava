@@ -19,4 +19,9 @@ public class PenSize implements Command {
 
     @Override
     public void reset() {}
+
+    @Override
+    public String name() {
+        return "PenSize";
+    }
 }

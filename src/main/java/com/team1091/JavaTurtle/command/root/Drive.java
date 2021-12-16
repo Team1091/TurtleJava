@@ -33,4 +33,9 @@ public class Drive implements Command {
     public void reset() {
         distanceTraveled = 0;
     }
+
+    @Override
+    public String name() {
+        return "Drive";
+    }
 }

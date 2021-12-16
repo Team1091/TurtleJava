@@ -19,4 +19,9 @@ public class PenState implements Command {
 
     @Override
     public void reset() {}
+
+    @Override
+    public String name() {
+        return "PenState";
+    }
 }

@@ -1,7 +1,6 @@
 package com.team1091.JavaTurtle.commandGroup;
 
-import com.team1091.JavaTurtle.command.DriveForward;
-import com.team1091.JavaTurtle.command.TurnRight;
+import com.team1091.JavaTurtle.command.*;
 
 public class BuildSquare extends CommandGroup {
     public BuildSquare(double size) {
@@ -11,5 +10,10 @@ public class BuildSquare extends CommandGroup {
                         new TurnRight(90)
                 )
         );
+    }
+
+    @Override
+    public String name() {
+        return "In BuildSquare:\n\t" + super.name();
     }
 }

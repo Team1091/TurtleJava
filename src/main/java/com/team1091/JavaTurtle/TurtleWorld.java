@@ -20,8 +20,8 @@ public class TurtleWorld extends PApplet {
 
     @Override
     public void settings() {
-        width = 1366;
-        height = 768;
+        width = 1280;
+        height = 720;
         size(width, height);
     }
 
@@ -73,6 +73,8 @@ public class TurtleWorld extends PApplet {
                 if(status == StatusCode.FINISHED) {
                     commandToExecute.reset();
                     turtle.commands.poll();
+                } else {
+                    System.out.println("Command \"" + commandToExecute.name() + "\" not yet finished...");
                 }
             }
 

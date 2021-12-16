@@ -7,4 +7,9 @@ public class PenDown extends PenState implements Command {
     public PenDown() {
         super(true);
     }
+
+    @Override
+    public String name() {
+        return "PenDown";
+    }
 }

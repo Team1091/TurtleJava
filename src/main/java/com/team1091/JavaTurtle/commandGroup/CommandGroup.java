@@ -11,6 +11,8 @@ import java.util.Queue;
 public class CommandGroup implements Command {
     private final Queue<Command> commands;
     private Queue<Command> commandQueue;
+    private Command lastCommand;
+    private boolean midCommand;
 
     public CommandGroup(Queue<Command> commands) {
         this.commands = commands;
@@ -29,7 +31,11 @@ public class CommandGroup implements Command {
             final var status = commandToExecute.apply(t, t.dt);
             if(status == StatusCode.FINISHED) {
                 commandToExecute.reset();
-                commandQueue.poll();
+                lastCommand = commandQueue.poll();
+                midCommand = false;
+            } else {
+                lastCommand = commandToExecute;
+                midCommand = true;
             }
         }
 
@@ -43,5 +49,17 @@ public class CommandGroup implements Command {
     @Override
     public void reset() {
         commandQueue = new LinkedList<>(commands);
+    }
+
+    @Override
+    public String name() {
+        String output = "In CommandGroup:\n\t";
+        if(midCommand) {
+            output += "Command \"" + lastCommand.name() + "\" not yet finished...";
+        } else {
+            output += "Command \"" + lastCommand.name() + "\" just finished...";
+        }
+
+        return output;
     }
 }
