@@ -25,7 +25,7 @@ public class Turtle {
     public float[] penColor = {0, 0, 0};
     public float penSize;
     public Queue<Command> commands;
-    public double dt = 0.1; //Functions as the simulation speed for an individual turtle...
+    public double dt = 50; //Functions as the simulation speed for an individual turtle...
 
     public Turtle(float x, float y, double facing, boolean pen, Queue<Command> commands) {
         this.x = x;
