@@ -7,6 +7,7 @@ import com.team1091.JavaTurtle.commandGroup.BuildSquare;
 import com.team1091.JavaTurtle.commandGroup.CommandMultiplier;
 import com.team1091.JavaTurtle.commandGroup.Triangle;
 
+import java.util.List;
 import java.util.Queue;
 
 public class StudentCommandList {
@@ -16,28 +17,40 @@ public class StudentCommandList {
 
         var runner = 1000f;
 
-        commandList.add(
+        commandList.addAll(List.of(
                 new PenDown()
-        );
-
-        while(runner > 0) {
-            commandList.add(
-                    new Triangle(runner)
+        ));
+        int degrees=0;
+        while (degrees < 360) {
+            commandList.addAll(
+                    List.of(
+                            new DriveForward(1),
+                            new TurnRight(1)
+                    )
             );
-            commandList.add(
-                    new PenColor(new float[]{runner%255,runner%510,runner%768})
-            );
-
-            runner = runner - 1;
+            degrees++;
         }
-
-        int jar;
-
-        for(jar = 1, jar < 100, jar++) {
-            //enter more code
-
-        };
-
-
+        commandList.addAll(List.of(
+                new PenUp(),
+                new DriveForward(140),
+                new PenDown())
+        );
+        degrees=0;
+        while (degrees < 360) {
+            commandList.addAll(
+                    List.of(
+                            new DriveForward(1),
+                            new TurnRight(1)
+                    )
+            );
+            degrees++;
+        }
+        commandList.addAll(List.of(
+                new TurnRight(90),
+                new PenUp(),
+                new DriveForward(115),
+                new PenDown(),
+                new DriveForward(200)
+                ));
     }
 }
